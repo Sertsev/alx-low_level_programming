@@ -1,4 +1,2 @@
 #!/bin/bash
-gcc -E source.c
-$CFILE=main.c
-mv $CFILE $CFILE.c
+gcc -E $CFILE > c
