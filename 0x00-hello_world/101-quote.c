@@ -1,7 +1,13 @@
-#include <stdio.io>
+#include <stdio.h>
+#include <unistd.h>
 
-int write(int filedes, const char *buf, unsigned int nbyte);
-int main(void) {
-  write(1, "Hello World!\n", 13); 
-  return(1);
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	return (1);
 }
