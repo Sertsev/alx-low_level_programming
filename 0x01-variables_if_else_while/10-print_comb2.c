@@ -12,6 +12,7 @@ int num2 = '0';
 while (num1 <= '9')
 {
 while (num2 <= '9')
+{
 putchar(num1);
 putchar(num2);
 if ((num1 != '9') || (num2 != '9'))
