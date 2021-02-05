@@ -11,7 +11,7 @@ char l = 'A';
 while (l <= 'Z')
 {
 putchar(l);
-a++;
+l++;
 }
 putchar('\n');
 return (0);
