@@ -1,6 +1,7 @@
 #include "holberton.h"
 /**
  *main-program entry point for execution.
+ *@c: charcter value.
  *Return:0-success
  */
 int _putchar(char c);
