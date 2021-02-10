@@ -1,11 +1,10 @@
 #include "holberton.h"
 /**
  *_abs-prints the absolute value of an integer.
+ *@a: gets an integer value.
  *Return:returns the abs value.
- *int-gets integer value.
  */
 
-int _abs(int);
 
 int _abs(int a)
 {
