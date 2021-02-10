@@ -43,7 +43,6 @@ _putchar((p % 10) + '0');
 else
 _putchar((p % 10) + '0');
 }
-_putchar('$');
 _putchar('\n');
 }
 }
