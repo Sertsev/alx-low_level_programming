@@ -1,24 +1,21 @@
-#include "holberton.h"
 #include <stdio.h>
 
 /**
- * main - Lists all the natural numbers below 1024 (excluded)
- *        that are multiples of 3 or 5.
- *
+ * main - this is the main function.
  * Return: Always 0.
  */
 int main(void)
 {
-int i, s = 0;
+int a;
+int b = 0;
 
-for (i = 0; i < 1024; i++)
+for (a = 0; a < 1024; a++)
 {
-if ((i % 3) == 0 || (i % 5) == 0)
-s += i;
+if (a % 3 == 0 || a % 5 == 0)
+{
+b += a;
 }
-
-_putchar(s);
-_putchar('\n');
-
+}
+printf("%d\n", b);
 return (0);
 }
