@@ -9,7 +9,7 @@ int a;
 char b;
 while (a < 10)
 {
-for (b = 'a'; b < 'z'; b++)
+for (b = 'a'; b <= 'z'; b++)
 {
 _putchar(b);
 }
