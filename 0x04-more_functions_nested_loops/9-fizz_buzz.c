@@ -1,33 +1,31 @@
-#include "holberton.h"
+include <stdio.h>
 
 /**
- * print_triangle - print triangle
- * @size: input size
+ * main - prints the numbers from 1 to 100 followed by a new line
+ * for multiples of 3 print Fizz
+ * for multiples of 5 print Buzz
+ * for multipes of 3 and 5 print FizzBuzz
  *
- * Description: size of triangle depends on input
- * Return: Always (0)
+ * Return: returns 0
  */
+int main(void)
+{
+int i;
 
-void print_triangle(int size)
+for (i = 1; i <= 100; i++)
 {
-int i, j;
+if (i % 5 == 0 && i % 3 == 0)
+printf("%s", "FizzBuzz");
+else if (i % 3 == 0)
+printf("%s", "Fizz");
+else if (i % 5 == 0)
+printf("%s", "Buzz");
+else
+printf("%d", i);
+if (i != 100)
+printf(" ");
+}
+printf("\n");
+return (0);
+}
 
-if (size <= 0)
-{
-_putchar('\n');
-}
-Felse
-{
-for (i = 1; i <= size; i++)
-{
-for (j = i; j < size; j++)
-_putchar(' ');
-}
-for (j = 1; j <= i; j++)
-{
-_putchar('#');
-}
-_putchar('\n');
-}
-}
-}
