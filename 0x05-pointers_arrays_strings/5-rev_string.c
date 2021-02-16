@@ -16,7 +16,7 @@ return (l);
 }
 
 /**
- *print_rev - prints a string in reverse
+ *rev_string - prints a string in reverse
  *@s: a string value to be reversed,
  *Return: always zero.
  */
