@@ -1,39 +1,34 @@
 #include "holberton.h"
-
 /**
- * start - function to check if the first and last letters match
- * @a: start index of string
- * @b: end index of string
- * @s: string to be checked
- * @flag: value holder for checker
- * Return: void function
+ * isPal -  returns 1 if a string is a palindrome and 0 if not
+ * @str: string
+ * @f: int
+ * @l: int
+ * Return: int
  */
-
-void start(char *s, int a, int b, int *flag)
+int isPal(char str[], int f, int l)
 {
-if (a < b + 1)
-{
-if (s[a] != s[b])
-*flag *= 0;
-else
-*flag *= 1;
-start(s, a + 1, b - 1, flag);
-}
-
-
-/**
- * _strlen_recursion - function to print length of string
- * @s: string to be checked
- * Return: lenght of string
- */
-
-int _strlen_recursion(char *s)
-{
-if (*s == '\0')
+if (f == l)
+return (1);
+if (str[f] != str[l])
 return (0);
-return (1 + _strlen_recursion(s + 1));
+if (f < l + 1)
+return (isPal(str, f + 1, l - 1));
+return (1);
 }
 
+/**
+ * _strlen - counts the length of a string
+ * @s: string
+ * Return: int
+ */
+
+int _strlen(char *s)
+{
+if (*s)
+return (1 + _strlen(s + 1));
+return (0);
+}
 /**
  *is_palindrome -  afunction
  *@s: a string
@@ -42,10 +37,8 @@ return (1 + _strlen_recursion(s + 1));
 
 int is_palindrome(char *s)
 {
-int flag = 1;
-
-if (_strlen_recursion(s) == 0)
-return (flag);
-start(s, 0, _strlen_recursion(s) - 1, &flag);
-return (flag);
+int len = _strlen(s);
+if (len == 0)
+return (1);
+return (isPal(s, 0, len - 1));
 }

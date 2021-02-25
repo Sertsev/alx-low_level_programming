@@ -22,9 +22,9 @@ return (prime(n, i + 1));
 /**
  *is_prime_number - a function to check prime numbers
  *@n: an integer original vlue
- *Return - an int integer.
+ *Return: an int integer.
  */
 int is_prime_number(int n)
 {
-return (prime_check(n, 2));
+return (prime(n, 2));
 }

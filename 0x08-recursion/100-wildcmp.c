@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- *wildcmp - a function,
+ *wildcmp-a function,
  *@s1: oh
  *@s2: yeah.
- *Returns: return an integer.
+ *Return: return an integer.
  */
 
 int wildcmp(char *s1, char *s2)
