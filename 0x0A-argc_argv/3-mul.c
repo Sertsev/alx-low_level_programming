@@ -15,7 +15,7 @@ bool _intc(int a, char c[]);
 int main(int argc, char **argv)
 {
 int i, mul = 1;
-if (argc > 2)/** && _intc(argc, argv[argc]) == false)*/
+if (argc == 2)/** && _intc(argc, argv[argc]) == false)*/
 {
 for (i = 1; i < argc; i++)
 {
@@ -26,7 +26,8 @@ printf("%d\n", mul);
 }
 else
 {
-printf("Error! you either give one argument only or give a string.\n");
+printf("Error\n");
+return (1);
 }
 return (0);
 }

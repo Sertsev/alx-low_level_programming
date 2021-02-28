@@ -22,6 +22,7 @@ a += atoi(argv[i]);
 if (a == 0)
 {
 printf("Error\n");
+return (1);
 break;
 }
 else
