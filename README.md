@@ -1,4 +1,4 @@
-ALX - Bit Manupulation
+ALX - ALX Low Level Programming
 ===========================
      C programming for ALX School!
 ==================================================================================
