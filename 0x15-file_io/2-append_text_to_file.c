@@ -1,59 +1,30 @@
 #include "holberton.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 
 /**
- * append_text_to_file - appends text at the end of a file
- * @filename: name of the file
- * @text_content: content to be appended
+ * append_text_to_file - Function that appends text at the end of a file
  *
- * Return: 1 on success, -1 otherwise
+ * @filename: file name
+ * @text_content: pointer to text
+ *
+ * Return: 1 on success or -1 if fail
  */
-
 int append_text_to_file(const char *filename, char *text_content)
 {
-int file, wrote;
+	int file, len = 0;
 
-if (filename == NULL)
-return (-1);
-file = open(filename, O_WRONLY | O_APPEND);
-if (file == -1)
-return (-1);
-if (text_content != NULL)
-{
-wrote = write(file, text_content, _strlen(text_content));
-if (wrote == -1)
-{
-close(file);
-return (-1);
-}
-close(file);
-return (1);
-}
-else
-{
-close(file);
-return (1);
-}
-}
-
-/**
- * _strlen - counts string length
- * @str: string to be used
- *
- * Return: length of the string
- */
-
-int _strlen(char *str)
-{
-int len = 0;
-
-while (str[len] != '\0')
-len++;
-return (len);
+	if (filename == NULL)
+		return (-1);
+	file = open(filename, O_APPEND | O_WRONLY, 0600);
+	if (file == -1)
+		return (-1);
+	if (text_content != NULL)
+	{
+		for (; text_content[len] != '\0'; len++)
+			;
+	}
+	if (len == 0)
+		return (1);
+	write(file, text_content, len);
+	close(file);
+	return (1);
 }
