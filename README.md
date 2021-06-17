@@ -3,5 +3,6 @@ ALX - ALX Low Level Programming
      C programming for ALX School!
 ==================================================================================
 
-
+Starting with a low level c programming 
+   
 ##################################################################################
