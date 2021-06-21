@@ -19,8 +19,8 @@ if (i != j)
 putchar(i);
 putchar(j);
 putchar(',');
-}
 putchar(' ');
+}
 		}
 	}
 
