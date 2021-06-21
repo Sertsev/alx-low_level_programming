@@ -5,10 +5,11 @@
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-char l = 'A';
-while (l <= 'Z')
+char l = 'a';
+while (l <= 'z')
 {
 putchar(l);
 l++;
