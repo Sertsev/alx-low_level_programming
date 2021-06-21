@@ -18,8 +18,11 @@ if (i != j)
 {
 putchar(i);
 putchar(j);
+if (i + 1 != j)
+{
 putchar(',');
 putchar(' ');
+}
 }
 		}
 	}
