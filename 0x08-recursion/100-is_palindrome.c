@@ -31,6 +31,8 @@ return (i);
 
 int pal(char *s, int i, int j, char *cp)
 {
+int k = 1;
+
 cp[j] = s[--i];
 
 if (s[i] != '\0')
@@ -42,11 +44,11 @@ return (0);
 else
 {
 j++;
-pal(s, i, j, cp);
+k = pal(s, i, j, cp);
 }
 }
 
-return (1);
+return (k);
 }
 
 /**
