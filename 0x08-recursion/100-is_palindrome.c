@@ -1,6 +1,55 @@
 #include "holberton.h"
 
 /**
+ * len - counts a length of a string
+ * @s: a string pointer
+ * @i: an integer counter
+ *
+ * Return: returns an integer
+ */
+
+int len(char *s, int i)
+{
+if (s[i] != '\0')
+{
+i++;
+i = len(s, i);
+}
+
+return (i);
+}
+
+/**
+ * pal - a function to check if a string is a palindrome
+ * @s: a string pointer
+ * @cp: a copied string pointer
+ * @i: int number counter
+ * @j: int number counter
+ *
+ * Return: returns an integer
+ */
+
+int pal(char *s, int i, int j, char *cp)
+{
+cp[j] = s[--i];
+
+if (s[i] != '\0')
+{
+if (cp[j] != s[j])
+{
+return (0);
+}
+else
+{
+j++;
+pal(s, i, j, cp);
+}
+}
+
+return (1);
+}
+
+/**
  * is_palindrome - a function to find palindrome strings
  * @s: a string pointer
  *
@@ -9,27 +58,15 @@
 
 int is_palindrome(char *s)
 {
-int i = 0, j = 0;
+int i = 0, j = 0, m;
 char cp[1024];
 
 if (*s == '\0')
-{
 return (1);
-}
-while (s[i] != '\0')
-{
-i++;
-}
 
-while (s[j] != '\0')
-{
-cp[j] = s[--i];
+i = len(s, i);
 
-if (cp[j] != s[j])
-{
-return (0);
-}
-j++;
-}
-return (1);
+m = pal(s, i, j, cp);
+
+return (m);
 }
