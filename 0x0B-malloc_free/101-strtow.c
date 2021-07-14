@@ -40,7 +40,7 @@ int i = 0, k = 0;
 
 words = malloc(256);
 
-if (str == NULL || str == "")
+if (str == NULL || str[0] == '\0')
 return (NULL);
 
 while (str[i] != '\0')
