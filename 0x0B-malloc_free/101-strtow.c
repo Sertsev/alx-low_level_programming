@@ -1,61 +1,74 @@
 #include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * wcre - finds a word
+ * number - function to count number of words
+ * @str: string being passed to check for words
  *
- * @words: an array of strings
- * @str: string pointer
- * @i: integer value
- * @k: array index
- * Return: returns an integer
+ * Return: number of words
  */
-
-int wcre(char **words, char *str, int i, int k)
+int number(char *str)
 {
-int j = 0;
+int a, num = 0;
 
-words[k] = malloc(128);
-
-for (; str[i] != ' '; i++)
+for (a = 0; str[a] != '\0'; a++)
 {
-words[k][j] = str[i];
-j++;
-}
-words[k][j] = '\0';
-
-return (i);
-}
-
-/**
- * strtow - finds words from the long string
- *
- * @str: a string pointer
- * Return: a pointer to pointer of a string
- */
-
-char **strtow(char *str)
-{
-char **words;
-int i = 0, k = 0;
-
-words = malloc(256);
-
-if (str == NULL || str[0] == '\0')
-return (NULL);
-
-while (str[i] != '\0')
-{
-if (str[i] == ' ')
-{
-i++;
-continue;
-}
+if (*str == ' ')
+str++;
 else
 {
-i = wcre(words, str, i, k);
-k++;
+for (; str[a] != ' ' && str[a] != '\0'; a++)
+str++;
+num++;
+}
+}
+return (num);
+}
+
+/**
+ * strtow - function that splits string into words
+ * @str: string being passed
+ * Return: null if string is empty or null or function fails
+ */
+char **strtow(char *str)
+{
+int total_words = 0, b = 0, c = 0, length = 0;
+char **words, *found_word;
+
+if (str == 0 || *str == 0)
+return (NULL);
+total_words = number(str);
+if (total_words == 0)
+return (NULL);
+words = malloc((total_words + 1) * sizeof(char *));
+if (words == 0)
+return (NULL);
+for (; *str != '\0' &&  b < total_words;)
+{
+if (*str == ' ')
+str++;
+else
+{
+found_word = str;
+for (; *str != ' ' && *str != '\0';)
+{
+length++;
+str++;
+}
+words[b] = malloc((length + 1) * sizeof(char));
+while (*found_word != ' ' && *found_word != '\0')
+{
+words[b][c] = *found_word;
+found_word++;
+c++;
+}
+words[b][c] = '\0';
+b++;
+c = 0;
+length = 0;
+str++;
 }
 }
 return (words);
 }
-
