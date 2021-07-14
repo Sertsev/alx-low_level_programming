@@ -11,13 +11,23 @@
 char *argstostr(int ac, char **av)
 {
 char *str;
-int i, n = 0, c = 0;
+int i = 0, n = 0, c = 0, j = 0, count = 0;
 
-str = malloc(sizeof(char) * 1024);
+while (i < ac)
+{
+for (j = 0; av[i][j]; j++)
+{
+count++;
+}
+i++;
+}
+
+str = malloc((sizeof(char) * count)+1024);
+
 
 if (ac == 0 || av == NULL)
 {
-return NULL;
+return (NULL);
 }
 
 while (n < ac)
@@ -34,5 +44,3 @@ c++;
 
 return (str);
 }
-
-
