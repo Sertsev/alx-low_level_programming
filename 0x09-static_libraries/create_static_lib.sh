@@ -1,3 +1,3 @@
 #!/bin/bash
-ls *.c |  xargs --no-run-if-empty gcc -Wall -c
-ls *.c | xargs ar rc liball.a
+gcc -Wall -Wextra -Werror -pedantic -c *.c
+ar rc liball.a *.o
