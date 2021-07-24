@@ -15,6 +15,8 @@ int n = strlen(format);
 int i = 0;
 
 va_start(args, format);
+if (format == NULL)
+	exit(1);
 
 while (i < n)
 {
@@ -31,7 +33,7 @@ printf("%f", va_arg(args, double));
 break;
 case 's':
 s = va_arg(args, char *);
-if (s == NULL)
+while (s == NULL)
 s = "(nil)";
 printf("%s", s);
 break;
