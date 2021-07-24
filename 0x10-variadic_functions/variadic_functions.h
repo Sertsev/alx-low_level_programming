@@ -2,6 +2,9 @@
 #define VARIADIC_FUNCTIONS_H
 
 #include <stdarg.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 /**
  * struct print_convert_variable - structure to hold function and char key
