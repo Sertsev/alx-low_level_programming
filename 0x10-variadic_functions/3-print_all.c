@@ -1,9 +1,8 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - print strings with given separator
- * @separator: delimiter
- * @n: number of arguments passed
+ * print_all - print strings with given separator
+ * @format: a string pointer
  *
  * Return: void function
  */
@@ -19,7 +18,7 @@ va_start(args, format);
 
 while (i < n)
 {
-switch(format[i])
+switch (format[i])
 {
 case 'c':
 printf("%c", va_arg(args, int));
