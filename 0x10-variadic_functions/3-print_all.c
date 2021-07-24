@@ -8,38 +8,40 @@
  * Return: void function
  */
 
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_all(const char * const format, ...)
 {
-char *str;
-unsigned int i;
 va_list args;
+char *s;
+int n = strlen(format);
+int i = 0;
 
-va_start(args, n);
-for (i = 0; i < n; i++)
+va_start(args, format);
+
+while (i < n)
 {
-str = va_arg(args, char *);
-if (str == NULL)
+switch(format[i])
 {
-printf("(nil)");
+case 'c':
+printf("%c", va_arg(args, int));
+break;
+case 'i':
+printf("%i", va_arg(args, int));
+break;
+case 'f':
+printf("%f", va_arg(args, double));
+break;
+case 's':
+s = va_arg(args, char *);
+if (s == NULL)
+s = "(nil)";
+printf("%s", s);
+break;
+default:
+i++;
+continue;
 }
-else
-{
-if (i != (n - 1))
-{
-if (separator != NULL)
-{
-printf("%s%s ", va_arg(args, char *), separator);
-}
-else
-{
-printf("%s", va_arg(args, char *));
-}
-}
-else
-{
-printf("%s", va_arg(args, char *));
-}
-}
+if (++i < n)
+printf(", ");
 }
 printf("\n");
 va_end(args);
