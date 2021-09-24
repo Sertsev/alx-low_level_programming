@@ -7,18 +7,4 @@
  * Return: returns a charcter pointer
  */
 
-char *rot13(char *s)
-{
-int i = 0;
-
-while (s[i] != '\0')
-{
-if ( ((s[i] <= 'Z') && (s[i] >= 'A')) || ((s[i] <= 'z') && (s[i] >= 'a')) )
-{
-((((((int)(s[i]) + 13) >= ((int)'A')) && (((int)(s[i]) + 13) <= ((int)'Z')))) || ((((int)(s[i]) + 13) >= ((int)'a')) && (((int)(s[i]) + 13) <= ((int)'z')))) ? (s[i] = (int)(s[i]) + 13): (s[i] = (int)(s[i]) - 13);
-}
-i++;
-}
-return s;
-}
 
